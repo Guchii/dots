@@ -18,8 +18,8 @@ compinit
 # End of lines added by compinstall
 source $DIR_ZSH/prompt.zsh
 source $DIR_ZSH/my_aliases.sh
-source $DIR_ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $DIR_ZSH/zsh-completions/zsh-completions.plugin.zsh
+# source $DIR_ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+# source $DIR_ZSH/zsh-completions/zsh-completions.plugin.zsh
 source $DIR_ZSH/key-bindings.zsh
 
  eval "$(zoxide init zsh)"

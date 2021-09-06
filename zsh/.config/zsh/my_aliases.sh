@@ -3,8 +3,9 @@ crun(){
 }
 alias v='lvim'
 alias nvim='v'
-alias ls='exa'
-alias ll='exa -lG'
+alias ls='exa --icons '
+alias ll='ls -lG'
 alias zz='source ~/.zshrc'
 alias nf='neofetch'
 alias cl='clear'
+alias lg='lazygit'
