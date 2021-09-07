@@ -130,11 +130,11 @@ super + m
 #fullscreen screenshot save
 
 super + Print
-     maim "/home/$USER/Pictures/$(date)"
+     maim "/home/$USER/Pictures/$(date).png"
 
 #cropped save
 super + shift + x
-      maim --select "/home/$USER/Pictures/$(date)"
+      maim --select "/home/$USER/Pictures/$(date).png"
 
 #  clipboard fullscreen
 super + u

@@ -70,7 +70,7 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.lang.cpp.formatters = { { exe = 'clang_format' } }
+-- lvim.lang.cpp.formatters = { { exe = 'clang_format' } }
 
 -- generic LSP settings
 -- you can set a custom on_attach function that will be used for all the language servers

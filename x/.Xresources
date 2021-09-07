@@ -8,7 +8,7 @@ Xft.lcdfilter:	lcddefault
 
 
 ! window padding
-st.borderpx:       0
+st.borderpx:       15
 st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=15 
 st.opacity:        255
 st.alpha:          0.97
