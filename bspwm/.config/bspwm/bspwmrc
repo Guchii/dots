@@ -9,8 +9,8 @@ xset r rate 260 60
 xsetroot -cursor_name left_ptr
 
 # compositing and wallpaper 
-
 picom & 
+dunst&
 nitrogen --restore &
 xrdb merge ~/.Xresources &  # (terminal theme)
 
@@ -24,7 +24,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a pavucontrol  state=floating
+bspc rule -a Pavucontrol  state=floating follow=on
+bspc rule -a franz  state=floating follow=on
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

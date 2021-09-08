@@ -4,6 +4,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+eval "$(zoxide init zsh)"
+
 setopt MENU_COMPLETE
 setopt no_list_ambiguous
 
@@ -21,5 +23,6 @@ source $DIR_ZSH/my_aliases.sh
 # source $DIR_ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # source $DIR_ZSH/zsh-completions/zsh-completions.plugin.zsh
 source $DIR_ZSH/key-bindings.zsh
+source $DIR_ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $DIR_ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
- eval "$(zoxide init zsh)"
