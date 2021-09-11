@@ -10,7 +10,7 @@ Xft.lcdfilter:	lcddefault
 ! window padding
 st.borderpx:       12
 !st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=15 
-st.font:           Fantasque Sans Mono:style:medium:pixelsize=24
+st.font:           FantasqueSansMono Nerd Font:style:Regular:pixelsize=18
 st.opacity:        255
 st.alpha:          1
 
@@ -31,39 +31,59 @@ st.alpha:          1
 #define base0E #c678dd
 #define base0F #be5046
 
-*foreground:   base07
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
-*background:   base00
-#endif
-*cursorColor:  base05
+/* *foreground:   base07 */
+/* #ifdef background_opacity */
+/* *background:   [background_opacity]base00 */
+/* #else */
+/* *background:   base00 */
+/* #endif */
+/* *cursorColor:  base05 */
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+/* *color0:       base00 */
+/* *color1:       base08 */
+/* *color2:       base0B */
+/* *color3:       base0A */
+/* *color4:       base0D */
+/* *color5:       base0E */
+/* *color6:       base0C */
+/* *color7:       base05 */
 
-*color8:       base03
-*color9:       base08
-*color10:      base0B
-*color11:      base0A
-*color12:      base0D
-*color13:      base0E
-*color14:      base0C
-*color15:      base07
+/* *color8:       base03 */
+/* *color9:       base08 */
+/* *color10:      base0B */
+/* *color11:      base0A */
+/* *color12:      base0D */
+/* *color13:      base0E */
+/* *color14:      base0C */
+/* *color15:      base07 */
 
-*color16:      base09
-*color17:      base0F
-*color18:      base01
-*color19:      base02
-*color20:      base04
-*color21:      base06
+/* *color16:      base09 */
+/* *color17:      base0F */
+/* *color18:      base01 */
+/* *color19:      base02 */
+/* *color20:      base04 */
+/* *color21:      base06 */
 
+*background: #24283b
+*foreground: #c0caf5
+
+*color0: #1D202F
+*color1: #f7768e
+*color2: #9ece6a
+*color3: #e0af68
+*color4: #7aa2f7
+*color5: #bb9af7
+*color6: #7dcfff
+*color7: #a9b1d6
+
+*color8: #414868
+*color9: #f7768e
+*color10: #9ece6a
+*color11: #e0af68
+*color12: #7aa2f7
+*color13: #bb9af7
+*color14: #7dcfff
+*color15: #c0caf5
 
 
 tabbed.selbgcolor:   #21252A

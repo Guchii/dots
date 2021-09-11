@@ -7,6 +7,7 @@ sxhkd &
 ~/.config/polybar/launch.sh --forest &
 xset r rate 260 60
 xsetroot -cursor_name left_ptr
+xrandr --setprovideroffloadsink 1 0
 
 if [[ $(xrandr --listmonitors | sed -ne '/:/ { s/^[^:]*:[\t\v\f ]*//p ; q0 }') -eq 2 ]]; then
 xrandr --output DP1 --mode 1366x768 --output eDP1 --mode 1920x1080 --left-of DP1

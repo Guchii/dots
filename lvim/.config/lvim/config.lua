@@ -11,10 +11,10 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "tokyonight"
 vim.opt.shiftwidth = 4
 lvim.highlight_line = false
-lvim.transparent_window = true
+-- lvim.transparent_window = true
 -- lvim.builtin.treesitter.rainbow.enable = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -141,7 +141,8 @@ lvim.plugins = {
           sort = true,
         }
       end,
-    }
+    },
+{"folke/tokyonight.nvim"},
 }
 lvim.builtin.dashboard.custom_header = {
   '',

@@ -1,7 +1,7 @@
 #  ------ programs  -------- # 
 
 super + Return
-        st
+        DRI_PRIME=1 st
 
 super + space
            sh ~/.local/bin/dmenu_script
@@ -151,10 +151,6 @@ super + shift + Print
     maim --select -m 1 | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 
 
-super + shift + f
-	chromium
-super + shift + p
-	pavucontrol
 # Multimedia keys
 XF86AudioRaiseVolume
 	pactl -- set-sink-volume 0 +5%
@@ -168,11 +164,7 @@ XF86AudioMute
 	amixer -D pulse sset Master toggle-mute
 
 # Simple amixer command seems to have problems unmuting device
-
-# Brightness up
-XF86MonBrightnessUp
-	blight set +5%
-
-# And brightness down
-XF86MonBrightnessDown
-	blight set -5%
+super + shift + focus
+    chromium
+super + shift + p
+    pavucontrol
