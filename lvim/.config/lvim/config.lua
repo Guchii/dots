@@ -20,7 +20,8 @@ lvim.transparent_window = true
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-vim.opt.number = false
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.cursorline = false
 
 vim.cmd([[
@@ -65,6 +66,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
 
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -105,15 +107,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 -- set an additional linter
--- lvim.lang.python.linters = {
---   {
+-- lvim.lang.python.linters = { {
 --     exe = "flake8",
 --   }
 -- }
 
 -- Additional Plugins
 lvim.plugins = {
-    {'kristijanhusak/orgmode.nvim'},
 {
   "lukas-reineke/indent-blankline.nvim",
   event = "BufRead",
@@ -126,13 +126,22 @@ lvim.plugins = {
     vim.g.indent_blankline_show_first_indent_level = false
   end
 },
-{
-  "p00f/nvim-ts-rainbow",
-},
   {'norcalli/nvim-colorizer.lua'},
   {'lunarvim/colorschemes'},
   {'tpope/vim-surround'},
   {'dsznajder/vscode-es7-javascript-react-snippets'},
+  {"tzachar/cmp-tabnine",
+      run = "./install.sh",
+      requires = "hrsh7th/nvim-cmp",
+      config = function()
+        local tabnine = require "cmp_tabnine.config"
+        tabnine:setup {
+          max_lines = 1000,
+          max_num_results = 20,
+          sort = true,
+        }
+      end,
+    }
 }
 lvim.builtin.dashboard.custom_header = {
   '',
