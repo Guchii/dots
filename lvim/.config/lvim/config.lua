@@ -14,20 +14,15 @@ lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
 vim.opt.shiftwidth = 4
 lvim.highlight_line = false
--- lvim.transparent_window = true
+lvim.transparent_window = true
 -- lvim.builtin.treesitter.rainbow.enable = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.cursorline = false
-
-vim.cmd([[
-  let g:vsnip_filetypes = {}
-  let g:vsnip_filetypes.javascriptreact = ['html']
-]])
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
@@ -157,5 +152,7 @@ lvim.builtin.dashboard.custom_header = {
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 }
 vim.cmd([[
-   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=javascriptreact
+  let g:vsnip_filetypes = {}
+  let g:vsnip_filetypes.javascriptreact = ['html']
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
 ]])

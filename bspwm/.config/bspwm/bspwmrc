@@ -3,14 +3,15 @@
 sxhkd &
 
 # polybar
-
 ~/.config/polybar/launch.sh --forest &
+
+# xsettings
 xset r rate 260 60
 xsetroot -cursor_name left_ptr
 xrandr --setprovideroffloadsink 1 0
-
 if [[ $(xrandr --listmonitors | sed -ne '/:/ { s/^[^:]*:[\t\v\f ]*//p ; q0 }') -eq 2 ]]; then
-xrandr --output DP1 --mode 1366x768 --output eDP1 --mode 1920x1080 --left-of DP1
+    xrandr --output DP-1 --mode 1366x768 --output eDP-1 --mode 1920x1080 --left-of DP-1
+    bspc monitor DP-1 -d 6 7 8 9 0
 fi
 
 # compositing and wallpaper 
@@ -19,17 +20,16 @@ dunst&
 nitrogen --restore &
 xrdb merge ~/.Xresources &  # (terminal theme)
 
-bspc monitor -d 1 2 3 4 5
+bspc monitor eDP-1 -d 1 2 3 4 5
 
 bspc config border_width         1
 bspc config window_gap           12
 bspc config presel_feedback_color "#ffffff" 
-bspc config split_ratio          0.50
+bspc config split_ratio          0.6
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Obsidian desktop='^5'
 bspc rule -a Pavucontrol  state=floating follow=on
 bspc rule -a franz  state=floating follow=on
 bspc rule -a mplayer2 state=floating
@@ -40,7 +40,3 @@ bspc config top_padding 20
 # border colors 
 bspc config focused_border_color "#83a598"
 bspc config normal_border_color "#454849"
-
-# Autostart
-obsidian &
-keepassxc &
