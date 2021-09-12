@@ -1,6 +1,7 @@
 # environment variables
 export PATH=$PATH:~/.local/bin
 export DRI_PRIME=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # StartX configurations per tty
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty2 ]]; then exec startx; fi
