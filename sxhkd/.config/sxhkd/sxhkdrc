@@ -4,7 +4,8 @@ super + Return
         DRI_PRIME=1 st
 
 super + space
-           sh ~/.local/bin/dmenu_script
+#           sh ~/.local/bin/dmenu_script
+            sh ~/.local/bin/dmenu_apps
 
 # reload config (bspwmrc and sxhkdrc)  # 
 

@@ -13,6 +13,8 @@ st.borderpx:       12
 st.font:           FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
 st.opacity:        255
 st.alpha:          1
+dmenu.font:        FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
+
 
 #define base00 #21252A 
 #define base01 #353b45
