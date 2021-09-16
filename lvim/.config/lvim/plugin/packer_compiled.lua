@@ -83,6 +83,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim"
   },
+  ["cheatsheet.nvim"] = {
+    loaded = true,
+    path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/start/cheatsheet.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/start/cmp-buffer"
@@ -149,7 +153,7 @@ _G.packer_plugins = {
   ["nvim-autopairs"] = {
     config = { "\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19core.autopairs\frequire\0" },
     load_after = {},
-    loaded = true,
+    loaded = false,
     needs_bufread = false,
     path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/opt/nvim-autopairs"
   },
@@ -187,6 +191,10 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2=\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\20core.treesitter\frequire\0" },
     loaded = true,
     path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/guchiii/.local/share/lunarvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -273,14 +281,6 @@ time([[Config for nvim-cmp]], false)
 time([[Config for project.nvim]], true)
 try_loadstring("\27LJ\1\2:\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\17core.project\frequire\0", "config", "project.nvim")
 time([[Config for project.nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-autopairs ]]
-
--- Config for: nvim-autopairs
-try_loadstring("\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19core.autopairs\frequire\0", "config", "nvim-autopairs")
-
-time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

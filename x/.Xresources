@@ -9,8 +9,9 @@ Xft.lcdfilter:	lcddefault
 
 ! window padding
 st.borderpx:       12
-!st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=15 
-st.font:           FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
+st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=18 
+!st.font:           FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
+
 st.opacity:        255
 st.alpha:          1
 dmenu.font:        FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
@@ -65,11 +66,32 @@ dmenu.font:        FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
 /* *color19:      base02 */
 /* *color20:      base04 */
 /* *color21:      base06 */
+/* TokyoNight Storm */
+/* *background: #24283b */
+/* *foreground: #c0caf5 */
 
-*background: #24283b
+/* *color0: #1D202F */
+/* *color1: #f7768e */
+/* *color2: #9ece6a */
+/* *color3: #e0af68 */
+/* *color4: #7aa2f7 */
+/* *color5: #bb9af7 */
+/* *color6: #7dcfff */
+/* *color7: #a9b1d6 */
+
+/* *color8: #414868 */
+/* *color9: #f7768e */
+/* *color10: #9ece6a */
+/* *color11: #e0af68 */
+/* *color12: #7aa2f7 */
+/* *color13: #bb9af7 */
+/* *color14: #7dcfff */
+/* *color15: #c0caf5 */
+
+*background: #1a1b26
 *foreground: #c0caf5
 
-*color0: #1D202F
+*color0: #15161E
 *color1: #f7768e
 *color2: #9ece6a
 *color3: #e0af68
@@ -86,8 +108,7 @@ dmenu.font:        FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
 *color13: #bb9af7
 *color14: #7dcfff
 *color15: #c0caf5
-
-
+ 
 tabbed.selbgcolor:   #21252A
 tabbed.selfgcolor:   #d6d8eb
 

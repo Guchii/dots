@@ -1,11 +1,14 @@
+vim.cmd('hi rainbowcol1 guifg=#9ece6a')
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "tokyonight"
+vim.g.tokyonight_style='night'
 vim.opt.shiftwidth = 4
 lvim.highlight_line = false
 lvim.transparent_window = true
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<S-y>"] = "y$"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = false
@@ -18,10 +21,21 @@ lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
+lvim.builtin.treesitter.rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = 1000,
+    colors = {
+         '#f7768e',
+         '#9ece6a',
+         '#e0af68',
+         '#7aa2f7',
+         '#bb9af7',
+         '#7dcfff',
+    }
+}
 lvim.plugins = {
-{
-  "lukas-reineke/indent-blankline.nvim",
+{ "lukas-reineke/indent-blankline.nvim",
   event = "BufRead",
   setup = function()
     vim.g.indentLine_enabled = 1
@@ -49,6 +63,8 @@ lvim.plugins = {
       end,
     },
 {"folke/tokyonight.nvim"},
+{'sudormrfbin/cheatsheet.nvim'},
+{'p00f/nvim-ts-rainbow'},
 }
 lvim.builtin.dashboard.custom_header = {
   '',
@@ -63,7 +79,5 @@ lvim.builtin.dashboard.custom_header = {
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 }
 vim.cmd([[
-  let g:vsnip_filetypes = {}
-  let g:vsnip_filetypes.javascriptreact = ['html']
-  autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
+autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
 ]])
