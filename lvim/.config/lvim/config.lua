@@ -1,4 +1,3 @@
-vim.cmd('hi rainbowcol1 guifg=#9ece6a')
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.colorscheme = "tokyonight"
@@ -16,7 +15,7 @@ lvim.keys.normal_mode["<F5>"]=":TermExec cmd='clear; g++ % &&./a.out && rm a.out
 lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.side = "right"
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -47,9 +46,7 @@ lvim.plugins = {
   end
 },
   {'norcalli/nvim-colorizer.lua'},
-  {'lunarvim/colorschemes'},
   {'tpope/vim-surround'},
-  {'dsznajder/vscode-es7-javascript-react-snippets'},
   {"tzachar/cmp-tabnine",
       run = "./install.sh",
       requires = "hrsh7th/nvim-cmp",
@@ -66,11 +63,10 @@ lvim.plugins = {
 {'sudormrfbin/cheatsheet.nvim'},
 {'p00f/nvim-ts-rainbow'},
 }
+
 lvim.builtin.dashboard.custom_header = {
-  '',
-  '',
-  '',
-  '',
+ '                                                       ',
+ '                                                       ',
  ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
  ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
  ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
@@ -78,6 +74,7 @@ lvim.builtin.dashboard.custom_header = {
  ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 }
+
 vim.cmd([[
-autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
+    autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
 ]])
