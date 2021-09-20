@@ -2,6 +2,8 @@ lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.colorscheme = "tokyonight"
 vim.g.tokyonight_style='night'
+vim.g.user_emmet_leader=','
+vim.g.user_emmet_mode='n'
 vim.opt.shiftwidth = 4
 lvim.highlight_line = false
 lvim.transparent_window = true
@@ -62,6 +64,8 @@ lvim.plugins = {
 {"folke/tokyonight.nvim"},
 {'sudormrfbin/cheatsheet.nvim'},
 {'p00f/nvim-ts-rainbow'},
+{'dsznajder/vscode-es7-javascript-react-snippets'},
+ { 'mattn/emmet-vim' },
 }
 
 lvim.builtin.dashboard.custom_header = {

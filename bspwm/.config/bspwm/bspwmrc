@@ -10,8 +10,8 @@ xset r rate 260 60
 xsetroot -cursor_name left_ptr
 xrandr --setprovideroffloadsink 1 0
 if [[ $(xrandr --listmonitors | sed -ne '/:/ { s/^[^:]*:[\t\v\f ]*//p ; q0 }') -eq 2 ]]; then
-    xrandr --output DP-1 --mode 1366x768 --output eDP-1 --mode 1920x1080 --left-of DP-1
-    bspc monitor DP-1 -d 6 7 8 9 0
+    xrandr --output DP-1 --mode 1366x768 --output eDP-1 --mode 1920x1080 --below DP-1
+    bspc monitor DP-1 -d 1 2 3 4 5
 fi
 
 # compositing and wallpaper 
@@ -20,7 +20,7 @@ dunst&
 nitrogen --restore &
 xrdb merge ~/.Xresources &  # (terminal theme)
 
-bspc monitor eDP-1 -d 1 2 3 4 5
+bspc monitor eDP-1 -d 6 7 8 9 0
 
 bspc config border_width         1
 bspc config window_gap           12
