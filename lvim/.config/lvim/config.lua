@@ -1,12 +1,11 @@
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "gruvbox-flat"
 vim.g.tokyonight_style='night'
-vim.g.user_emmet_leader=','
-vim.g.user_emmet_mode='n'
 vim.opt.shiftwidth = 4
 lvim.highlight_line = false
-lvim.transparent_window = true
+-- lvim.transparent_window = true
+vim.g.gruvbox_flat_style = "hard"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-y>"] = "y$"
@@ -45,6 +44,7 @@ lvim.plugins = {
     vim.g.indent_blankline_buftype_exclude = {"terminal"}
     vim.g.indent_blankline_show_trailing_blankline_indent = false
     vim.g.indent_blankline_show_first_indent_level = false
+    vim.g.indentLine_indentLevel = 2
   end
 },
   {'norcalli/nvim-colorizer.lua'},
@@ -65,7 +65,8 @@ lvim.plugins = {
 {'sudormrfbin/cheatsheet.nvim'},
 {'p00f/nvim-ts-rainbow'},
 {'dsznajder/vscode-es7-javascript-react-snippets'},
- { 'mattn/emmet-vim' },
+{ 'mattn/emmet-vim' },
+{'eddyekofo94/gruvbox-flat.nvim'},
 }
 
 lvim.builtin.dashboard.custom_header = {
@@ -81,4 +82,10 @@ lvim.builtin.dashboard.custom_header = {
 
 vim.cmd([[
     autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
+    let g:user_emmet_leader_key=','
+    let g:user_emmet_mode='n'
 ]])
+
+lvim.lang.html.formatters = { { exe = 'prettier' } }
+lvim.lang.javascriptreact.linters = { { exe = 'eslint' } }
+lvim.lang.javascript.linters = { { exe = 'eslint' } }

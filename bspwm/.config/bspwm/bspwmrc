@@ -3,7 +3,10 @@
 sxhkd &
 
 # polybar
+killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 ~/.config/polybar/launch.sh --forest &
+polybar -c ~/.config/polybar/tiny.conf -r bar &
 
 # xsettings
 xset r rate 260 60
@@ -18,7 +21,7 @@ fi
 picom & 
 dunst&
 nitrogen --restore &
-xrdb merge ~/.Xresources &  # (terminal theme)
+xrdb merge ~/.Xresources.d/gruvbox-flat/.Xresources &
 
 bspc monitor eDP-1 -d 6 7 8 9 0
 

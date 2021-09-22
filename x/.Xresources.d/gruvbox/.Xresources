@@ -8,13 +8,13 @@ Xft.hintstyle:  hintfull
 
 ! window padding
 st.borderpx:          15
-st.font:           JetBrainsMono Nerd Font  :pixelsize=15 , Material Design Icons :pixelsize =15
+st.font:           JetBrainsMono Nerd Font  :pixelsize=18 , Material Design Icons :pixelsize =15
 st.opacity: 255
 
-! hard contrast: *background: #1d2021
-*background: #282828
+*background: #1d2021
+! *background: #282828
 ! soft contrast: *background: #32302f
-*foreground: #ebdbb2
+*foreground: #d4be98
 ! Black + DarkGrey
 *color0:  #282828
 *color8:  #928374
