@@ -1,17 +1,15 @@
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "gruvbox-flat"
-vim.g.tokyonight_style='night'
+lvim.colorscheme = "tokyonight"
+vim.g.tokyonight_style='dark'
 vim.opt.shiftwidth = 4
-lvim.highlight_line = false
--- lvim.transparent_window = true
-vim.g.gruvbox_flat_style = "hard"
+lvim.transparent_window = true
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-y>"] = "y$"
-vim.opt.number = true
+lvim.keys.normal_mode["<F9>"] = "y$"
 vim.opt.relativenumber = true
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 lvim.keys.normal_mode["<F5>"]=":TermExec cmd='clear; g++ % &&./a.out && rm a.out'<cr>"
 lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
 lvim.builtin.dashboard.active = true
@@ -47,26 +45,28 @@ lvim.plugins = {
     vim.g.indentLine_indentLevel = 2
   end
 },
-  {'norcalli/nvim-colorizer.lua'},
-  {'tpope/vim-surround'},
-  {"tzachar/cmp-tabnine",
-      run = "./install.sh",
-      requires = "hrsh7th/nvim-cmp",
-      config = function()
-        local tabnine = require "cmp_tabnine.config"
-        tabnine:setup {
-          max_lines = 1000,
-          max_num_results = 20,
-          sort = true,
-        }
-      end,
-    },
+{'norcalli/nvim-colorizer.lua'},
+{'tpope/vim-surround'},
 {"folke/tokyonight.nvim"},
 {'sudormrfbin/cheatsheet.nvim'},
 {'p00f/nvim-ts-rainbow'},
 {'dsznajder/vscode-es7-javascript-react-snippets'},
 { 'mattn/emmet-vim' },
-{'eddyekofo94/gruvbox-flat.nvim'},
+{ 'phanviet/vim-monokai-pro'},
+{'Shatur/neovim-ayu'},
+{'andweeb/presence.nvim',
+    event = "BufRead",
+    setup = function()
+    vim.g.presence_auto_update         = 1
+    vim.g.presence_neovim_image_text   = "The One True Text Editor"
+    vim.g.presence_main_image          = "neovim"
+    vim.g.presence_client_id           = "793271441293967371"
+    vim.g.presence_debounce_timeout    = 10
+    vim.g.presence_enable_line_number  = 1
+    vim.g.presence_blacklist           = {}
+    vim.g.presence_buttons             = 1
+    end
+    },
 }
 
 lvim.builtin.dashboard.custom_header = {
@@ -84,8 +84,17 @@ vim.cmd([[
     autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
     let g:user_emmet_leader_key=','
     let g:user_emmet_mode='n'
+    augroup SaveManualFolds
+        autocmd!
+        au BufWinLeave, BufLeave ?* silent! mkview
+        au BufWinEnter           ?* silent! loadview
+    augroup END
+
+    vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 ]])
 
 lvim.lang.html.formatters = { { exe = 'prettier' } }
-lvim.lang.javascriptreact.linters = { { exe = 'eslint' } }
-lvim.lang.javascript.linters = { { exe = 'eslint' } }
+lvim.lang.javascript.formatters = { { exe = 'prettier' } }
+lvim.lang.javascriptreact.formatters = { { exe = 'prettier' } }
+-- lvim.lang.javascriptreact.linters = { { exe = 'eslint' } }
+-- lvim.lang.javascript.linters = { { exe = 'eslint' } }
