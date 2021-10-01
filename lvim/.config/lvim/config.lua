@@ -11,13 +11,13 @@ lvim.keys.normal_mode["<F9>"] = "y$"
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 lvim.keys.normal_mode["<F5>"] = ":TermExec cmd='clear; g++ % &&./a.out && rm a.out'<cr>"
-lvim.builtin.telescope.defaults.file_ignore_patterns = {".git", "node_modules"}
+lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = {"haskell"}
+lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.rainbow = {
     enable = true,
@@ -29,8 +29,8 @@ lvim.builtin.treesitter.rainbow = {
         "#e0af68",
         "#7aa2f7",
         "#bb9af7",
-        "#7dcfff"
-    }
+        "#7dcfff",
+    },
 }
 lvim.plugins = {
     {
@@ -61,18 +61,18 @@ lvim.plugins = {
                 "try_statement",
                 "catch_clause",
                 "import_statement",
-                "operation_type"
+                "operation_type",
             }
             vim.wo.colorcolumn = "99999"
-        end
+        end,
     },
-    {"norcalli/nvim-colorizer.lua"},
-    {"tpope/vim-surround"},
-    {"folke/tokyonight.nvim"},
-    {"sudormrfbin/cheatsheet.nvim"},
-    {"p00f/nvim-ts-rainbow"},
-    {"dsznajder/vscode-es7-javascript-react-snippets"},
-    {"mattn/emmet-vim"},
+    { "norcalli/nvim-colorizer.lua" },
+    { "tpope/vim-surround" },
+    { "folke/tokyonight.nvim" },
+    { "sudormrfbin/cheatsheet.nvim" },
+    { "p00f/nvim-ts-rainbow" },
+    { "dsznajder/vscode-es7-javascript-react-snippets" },
+    { "mattn/emmet-vim" },
     {
         "andweeb/presence.nvim",
         event = "BufRead",
@@ -84,10 +84,22 @@ lvim.plugins = {
             vim.g.presence_debounce_timeout = 10
             vim.g.presence_enable_line_number = 1
             vim.g.presence_blacklist = {}
-            vim.g.presence_buttons = 1
-        end
+        end,
     },
-    {"anburocky3/bootstrap5-snippets"},
+    { "anburocky3/bootstrap5-snippets" },
+    {
+        "RishabhRD/nvim-cheat.sh",
+        requires = "RishabhRD/popfix",
+        cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
+        config = function()
+            vim.g.cheat_default_window_layout = "vertical_split"
+        end,
+    },
+    {
+        "turbio/bracey.vim",
+        cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+        run = "npm install --prefix server",
+    },
 }
 
 lvim.builtin.dashboard.custom_header = {
@@ -98,11 +110,10 @@ lvim.builtin.dashboard.custom_header = {
     " ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
     " ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
     " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-    " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝"
+    " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
 }
 
-vim.cmd(
-    [[
+vim.cmd([[
     autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
     let g:user_emmet_leader_key=','
     let g:user_emmet_mode='n'
@@ -113,20 +124,13 @@ vim.cmd(
     augroup END
 
     vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-]]
-)
+]])
 
-lvim.lang.html.formatters = {{exe = "prettier"}}
-lvim.lang.javascript.formatters = {{exe = "prettier"}}
-lvim.lang.javascriptreact.formatters = {{exe = "prettier"}}
+lvim.lang.html.formatters = { { exe = "prettier" } }
+lvim.lang.javascript.formatters = { { exe = "prettier" } }
+lvim.lang.javascript.linters = { { exe = "eslint" } }
+lvim.lang.javascriptreact.linters = { { exe = "eslint" } }
+lvim.lang.javascriptreact.formatters = { { exe = "prettier" } }
+lvim.lang.lua.formatters = { { exe = "stylua", args = { "--indent-type", "Spaces" } } }
 
-require("luasnip").filetype_extend("javascriptreact", {"html"})
-local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
-
-parser_configs.norg = {
-    install_info = {
-        url = "https://github.com/nvim-neorg/tree-sitter-norg",
-        files = {"src/parser.c", "src/scanner.cc"},
-        branch = "main"
-    }
-}
+require("luasnip").filetype_extend("javascriptreact", { "html" })
