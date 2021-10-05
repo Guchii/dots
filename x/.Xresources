@@ -9,7 +9,7 @@ Xft.lcdfilter:	lcddefault
 
 ! window padding
 st.borderpx:       12
-st.font:           JetBrainsMono Nerd Font  :pixelsize=24 , Material Design Icons :pixelsize =15
+st.font:           JetBrainsMono Nerd Font  :pixelsize=15 , Material Design Icons :pixelsize =15
 !st.font:           FantasqueSansMono Nerd Font:style:Bold:pixelsize=18
 
 st.opacity:        255

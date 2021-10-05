@@ -1,11 +1,10 @@
 #  ------ programs  -------- # 
 
 super + Return
-        DRI_PRIME=1 st
+    DRI_PRIME=1 alacritty
 
 super + space
-#           sh ~/.local/bin/dmenu_script
-            sh ~/.local/bin/dmenu_apps
+    sh ~/.local/bin/dmenu_apps
 
 # reload config (bspwmrc and sxhkdrc)  # 
 
@@ -125,25 +124,6 @@ super + m
   bspc desktop -l next  # idk what this does 
 
 
-# -------------- take screenshots ------------- #
-
-
-#fullscreen screenshot save
-
-# super + Print
-#      maim "/home/$USER/Pictures/$(date).png"
-
-# #cropped save
-# super + shift + x
-#       maim --select "/home/$USER/Pictures/$(date).png"
-
-# #  clipboard fullscreen
-# super + u
-#      maim | xclip -selection clipboard -t image/png
-
-# # clipboard cropped
-# super + shift + u
-#     maim --select | xclip -selection clipboard -t image/png
 
 shift + Print
     maim -m 1 | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"

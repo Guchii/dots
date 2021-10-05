@@ -1,3 +1,4 @@
+cat ~/todos.txt
 # Lines configured by zsh-newuser-install
 DIR_ZSH=~/.config/zsh
 HISTFILE=~/.histfile
