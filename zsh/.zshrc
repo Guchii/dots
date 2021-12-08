@@ -1,4 +1,3 @@
-cat ~/todos.txt
 # Lines configured by zsh-newuser-install
 DIR_ZSH=~/.config/zsh
 HISTFILE=~/.histfile
@@ -27,3 +26,24 @@ source $DIR_ZSH/key-bindings.zsh
 source $DIR_ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $DIR_ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/guchiii/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/guchiii/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/guchiii/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/guchiii/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+[[ $TERM = "alacritty" ]] && tls
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
